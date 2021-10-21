@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stripe Checkout Sample</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./index.js" defer></script>
+  </head>
+
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
+        <section class="container">
+          <div>
+            <h1>Single Flower</h1>
+            <h4>Purchase an original flower from Q-Summit</h4>
+
+            <div class="pasha-image">
+              <img
+                src="images/blue_roses.jpg"
+                width="140"
+                height="160"
+                />
+            </div>
+            <div class="product-content-sec">
+              <p>Blue roses (Rosa)</p>
+              <p>Height : 15 cm</p>
+              <p>Price : 15 $</p>
+          </div>
+          </div>
+
+          <form action="/create-checkout-session" method="POST">
+            <button id="submit">Buy</button>
+          </form>
+        </section>
+
+        <div id="error-message"></div>
+      </div>
+    </div>
+  </body>
+</html>
