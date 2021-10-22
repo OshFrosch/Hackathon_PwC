@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>News Theme</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
     <!--    <link rel="stylesheet" type="text/css" href="css/animate.css" /> -->
@@ -32,7 +32,7 @@
                     <h1>SPECIAL OFFER !</h1>
                     <h4>Japanese Cherry Blossom</h4>
                     <div class="button-sec">
-                        <a href="{{url_for('static', filename='bonsai1.html')}}" class="btn buy-btn">Buy Now</a>
+                        <a href="{{url_for('static', filename='bonsai1.html') }}" class="btn buy-btn">Buy Now</a>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -64,7 +64,7 @@
                     <h2>Explore our newest product</h2>
                     <h4>Suzanne Brown</h4>
                     <h6>Rudbeckia hirta</h6>
-                    <a href="susanne_brown.html" class="btn buy-btn">Buy Now</a>
+                    <a href="{{url_for('static', filename='susanne_brown.html') }}" class="btn buy-btn">Buy Now</a>
                 </div>
                 <div class="col-md-6">
                     <div class="embed-responsive embed-responsive-16by9">
@@ -99,7 +99,9 @@
                     <td>
                         <div class="col col-md-4 col-12">
                             <figure>
-                                <a href="blue_roses.html"> <img src="images/blue_roses.jpg" height="500px" width="350px" alt="p1"></a>
+                                <a href=" {{url_for('static', filename='blue_roses.html')}}"> <img src=" {{url_for('static', filename='images/blue_roses.jpg')}}" height="500px" width="350px" alt="p1"></a>
+                               
+                               
                             </figure>
                         </div>
                     </td>
@@ -111,7 +113,7 @@
                     <td>
                         <div class="col col-md-4 col-12">
                             <figure>
-                                <a href="cactus.html"><img src="images/cactus.jpg" height="500px" width="350px" alt="p1"></a>
+                                <a href="{{url_for('static', filename='cactus.html')}}"><img src=" {{url_for('static', filename='images/cactus.jpg')}}" height="500px" width="350px" alt="p1"></a>
                             </figure>
                         </div>
                     </td>
@@ -215,8 +217,8 @@
             </div>
         </footer>
 
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js">
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}">
         </script>
         <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
