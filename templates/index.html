@@ -9,15 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
     <!--    <link rel="stylesheet" type="text/css" href="css/animate.css" /> -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/image_click.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
 </head>
 
 <body>
     <header>
         <div class="container">
             <div class="brand-sec">
-                <img src="images/logo.png" alt="logo">
+                <img src="{{url_for('static', filename='images/logo.png')}}" alt="logo">
             </div>
             <div class="content">
                 <h5>Q-Summit 2021 <br/>PWC </h5>
@@ -32,12 +32,12 @@
                     <h1>SPECIAL OFFER !</h1>
                     <h4>Japanese Cherry Blossom</h4>
                     <div class="button-sec">
-                        <a href="bonsai1.html" class="btn buy-btn">Buy Now</a>
+                        <a href="{{url_for('static', filename='bonsai1.html')}}" class="btn buy-btn">Buy Now</a>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="product-img">
-                        <img src="images/bonsai_main.png">
+                        <img src="{{url_for('static', filename='images/bonsai_main.png')}}">
                         <div class="price">
                             39<span>$</span>
                         </div>
