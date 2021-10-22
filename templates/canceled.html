@@ -6,9 +6,9 @@
 
     <title>Stripe Checkout Sample</title>
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/global.css" />
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico')}}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css')}}" />
   </head>
 
   <body>
@@ -26,22 +26,22 @@
       <div class="sr-content">
         <div class="pasha-image-stack">
           <img
-            src="https://picsum.photos/280/320?random=1"
+            src="{{ url_for('static', filename='images/sun_flower.png')}}"
             width="140"
             height="160"
           />
           <img
-            src="https://picsum.photos/280/320?random=2"
+            src="{{url_for('static', filename='images/blue_roses.jpg')}}"
             width="140"
             height="160"
           />
           <img
-            src="https://picsum.photos/280/320?random=3"
+            src="{{ url_for('static', filename='images/lily.jpg')}}"
             width="140"
             height="160"
           />
           <img
-            src="https://picsum.photos/280/320?random=4"
+            src="{{ url_for('static', filename='images/bonsai 2.jpg')}}"
             width="140"
             height="160"
           />

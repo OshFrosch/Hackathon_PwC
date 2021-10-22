@@ -35,6 +35,14 @@ app = Flask(__name__, static_url_path='/templates')
 def get_example(name=None):
     return render_template('index.html', name=name)
 
+@app.route('/canc', methods=['GET'])
+def get_succ(name=None):
+    return render_template('canceled.html', name=name)
+
+@app.route('/succ', methods=['GET'])
+def get_canc(name=None):
+    return render_template('success.html', name=name)
+
 
 # Fetch the Checkout Session to display the JSON result on the success page
 @app.route('/checkout-session', methods=['GET'])
@@ -55,8 +63,8 @@ def create_checkout_session():
         # For full details see https:#stripe.com/docs/api/checkout/sessions/create
         # ?session_id={CHECKOUT_SESSION_ID} means the redirect will have the session ID set as a query param
         checkout_session = stripe.checkout.Session.create(
-            success_url=domain_url + '/success.html?session_id={CHECKOUT_SESSION_ID}',
-            cancel_url=domain_url + '/canceled.html',
+            success_url=domain_url + '/succ?session_id={CHECKOUT_SESSION_ID}',
+            cancel_url=domain_url + '/canc',
             payment_method_types=(os.getenv('PAYMENT_METHOD_TYPES') or 'card').split(','),
             mode='payment',
             # automatic_tax={'enabled': True},

@@ -15,7 +15,7 @@ Open `.env` and confirm `PRICE` is set equal to the ID of a Price from your
 Stripe account. It should look something like:
 
 ```
-PRICE=price_1Hh1ZeCZ6qsJgndJaX9fauRl
+PRICE=price_1JnNDLEohgaTHJTR9vP5latn
 ```
 
 Note that `price_12345` is a placeholder and the sample will not work with that
