@@ -28,31 +28,31 @@ stripe.set_app_info(
 stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
 stripe.api_version = '2020-08-27'
 
-app = Flask(__name__, static_url_path='/templates')
+application = Flask(__name__, static_url_path='/templates')
 
 
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def get_example(name=None):
     return render_template('index.html', name=name)
 
-@app.route('/canc', methods=['GET'])
+@application.route('/canc', methods=['GET'])
 def get_succ(name=None):
     return render_template('canceled.html', name=name)
 
-@app.route('/succ', methods=['GET'])
+@application.route('/succ', methods=['GET'])
 def get_canc(name=None):
     return render_template('success.html', name=name)
 
 
 # Fetch the Checkout Session to display the JSON result on the success page
-@app.route('/checkout-session', methods=['GET'])
+@application.route('/checkout-session', methods=['GET'])
 def get_checkout_session():
     id = request.args.get('sessionId')
     checkout_session = stripe.checkout.Session.retrieve(id)
     return jsonify(checkout_session)
 
 
-@app.route('/create-checkout-session', methods=['POST'])
+@application.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
     domain_url = os.getenv('DOMAIN')
 
@@ -78,7 +78,7 @@ def create_checkout_session():
         return jsonify(error=str(e)), 403
 
 
-@app.route('/webhook', methods=['POST'])
+@application.route('/webhook', methods=['POST'])
 def webhook_received():
     # You can use webhooks to receive information about asynchronous payment events.
     # For more about our webhook events check out https://stripe.com/docs/webhooks.
@@ -118,5 +118,5 @@ def webhook_received():
     return jsonify({'status': 'success'})
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    application.debug = True
+    application.run()
